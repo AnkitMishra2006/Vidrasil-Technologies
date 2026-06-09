@@ -1,0 +1,36 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun.lockb
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.DS_Store
+.tanstack
+
+# Build output
+dist/
+.output/
+.vercel/
+.netlify/
+.cache/
+.vite/
+
+# Environment variables
+.env
+*.env
+.env.*
+!.env.example
+
+# OS files
+Thumbs.db
