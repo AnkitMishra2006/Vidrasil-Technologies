@@ -29,7 +29,7 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-5 lg:px-8 h-20 md:h-24 flex items-center justify-between gap-8">
-        <a href="#" className="flex min-w-0 shrink items-center" aria-label="Vidrasil home">
+        <a href="/" className="flex min-w-0 shrink items-center" aria-label="Vidrasil Technologies - Back to Home">
           <Logo size="nav" />
         </a>
 

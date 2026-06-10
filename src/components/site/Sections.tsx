@@ -71,9 +71,9 @@ function IconTile({
 /* ----------------------------- HERO ----------------------------- */
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+    <section aria-labelledby="hero-heading" className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <img src={heroBg} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-50" />
+        <img src={heroBg} alt="Vidrasil School Management Software Background" className="absolute inset-0 w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
       </div>
       <div className="absolute inset-0 grid-pattern opacity-30 -z-10 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" aria-hidden />
@@ -89,13 +89,12 @@ export function Hero() {
             Now Accepting Early Access
           </div>
 
-          <h1 className="mt-7 font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight">
-            The Operating System for{" "}
-            <span className="text-brand-gradient">Modern Schools</span>
+          <h1 id="hero-heading" className="mt-7 font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight">
+            The School Management Software for <span className="text-brand-gradient">Modern Indian Schools</span>
           </h1>
 
           <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            One intelligent platform for students, staff, fees, attendance and communication — built for Indian K–12 institutions.
+            A comprehensive School ERP system for K–12 institutions. Manage students, automate fee collection, track attendance, and connect with parents in one intelligent platform.
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
@@ -144,15 +143,15 @@ export function Hero() {
 /* --------------------------- ABOUT BRAND --------------------------- */
 export function BrandIntro() {
   return (
-    <section id="about" className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="about" aria-labelledby="about-heading" className="py-24 lg:py-32 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
         <Reveal className="lg:col-span-7">
           <SectionLabel>WHO WE ARE</SectionLabel>
-          <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
+          <h2 id="about-heading" className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
             Not just software. <span className="text-brand-gradient">Infrastructure for education.</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Administrative complexity should never get in the way of teaching. We build the systems that quietly carry the weight of running a school — so your team can focus on students.
+            Administrative complexity should never get in the way of teaching. We build the School Management System that quietly carries the weight of running an institution — so your team can focus on students.
           </p>
 
           <figure className="mt-10 border-l-4 border-teal pl-6">
@@ -168,7 +167,7 @@ export function BrandIntro() {
             <div className="relative rounded-3xl overflow-hidden border border-border shadow-elegant bg-card">
               <img
                 src={illustrationAdmin}
-                alt="School administrator using Vidrasil dashboard"
+                alt="School administrator using Vidrasil ERP software dashboard"
                 loading="lazy"
                 width={1536}
                 height={1024}
@@ -203,15 +202,15 @@ export function Problem() {
     { icon: Network, t: "Disconnected stakeholders", d: "Staff, parents, students operating in separate information silos." },
   ];
   return (
-    <section className="py-24 lg:py-32 bg-surface relative">
+    <section id="problem" aria-labelledby="problem-heading" className="py-24 lg:py-32 bg-surface relative">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="max-w-3xl">
           <SectionLabel>THE CHALLENGE</SectionLabel>
-          <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl text-foreground leading-[1.1]">
-            Most schools run on tools that were never built for schools.
+          <h2 id="problem-heading" className="mt-4 font-display font-bold text-4xl sm:text-5xl text-foreground leading-[1.1]">
+            Most schools run on tools that were never built for modern education.
           </h2>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-            Your staff spends more time managing data than managing students.
+            Without a unified School ERP, your staff spends more time managing data than managing students.
           </p>
         </Reveal>
 
@@ -242,18 +241,18 @@ export function Solution() {
     { icon: Link2, n: "03", tag: "Connect", t: "Everyone in the loop", d: "Parents, teachers, admins, leadership — all informed in real time, always." },
   ];
   return (
-    <section id="solution" className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="solution" aria-labelledby="solution-heading" className="py-24 lg:py-32 relative overflow-hidden">
       {/* Color accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-gradient opacity-[0.08] blur-3xl rounded-full -z-10" aria-hidden />
 
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="max-w-3xl">
           <SectionLabel>THE SOLUTION</SectionLabel>
-          <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
-            One platform. Every person. <span className="text-brand-gradient">Every process.</span>
+          <h2 id="solution-heading" className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
+            One platform. Every person. <span className="text-brand-gradient">Every school process.</span>
           </h2>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-            A unified school management platform connecting every role, department and workflow in a single intelligent system.
+            Vidrasil is a unified school management platform connecting every role, department and workflow in a single intelligent ERP system.
           </p>
         </Reveal>
 
@@ -280,7 +279,7 @@ export function Solution() {
             <div className="lg:col-span-7 relative">
               <img
                 src={illustrationEcosystem}
-                alt="Connected ecosystem of parents, teachers, students and administrators"
+                alt="Connected school ecosystem showing teachers, parents, and students integrated via Vidrasil ERP"
                 loading="lazy"
                 width={1536}
                 height={1024}
@@ -294,7 +293,7 @@ export function Solution() {
                 <span className="text-brand-gradient">connected in real-time.</span>
               </h3>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Teachers update once. Parents see instantly. Admins stay in control. Students never miss a beat.
+                Our School ERP ensures teachers update once, parents see instantly, and admins stay in total control.
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {["Admins", "Teachers", "Students", "Parents"].map((r) => (
@@ -314,26 +313,26 @@ export function Solution() {
 /* --------------------------- FEATURES --------------------------- */
 export function Features() {
   const items = [
-    { icon: GraduationCap, t: "Student Management", d: "Complete digital profiles — admission to graduation." },
-    { icon: CheckCircle2, t: "Attendance", d: "Mark, track and notify in seconds. Zero paper." },
-    { icon: Wallet, t: "Fee Management", d: "Structures, receipts, concessions and reminders — automated." },
+    { icon: GraduationCap, t: "Student Information System", d: "Complete digital profiles — admission to graduation." },
+    { icon: CheckCircle2, t: "Attendance Management", d: "Mark, track and notify in seconds. Zero paper." },
+    { icon: Wallet, t: "Fee Management Software", d: "Structures, receipts, concessions and reminders — automated." },
     { icon: MessageSquare, t: "Communication Hub", d: "Structured, auditable messaging. No more WhatsApp chaos." },
-    { icon: FileText, t: "Examination", d: "Schedules, mark entry, report cards, results — handled." },
+    { icon: FileText, t: "Examination & Results", d: "Schedules, mark entry, report cards, results — handled." },
     { icon: Users2, t: "Staff Management", d: "Profiles, roles, attendance and records, professionally managed." },
     { icon: BarChart3, t: "Reports & Analytics", d: "Decision-grade dashboards for leadership, anytime." },
     { icon: Heart, t: "Parent Portal", d: "Real-time window into a child's school life." },
-    { icon: Smartphone, t: "Mobile First", d: "Every critical function on any device, anywhere." },
+    { icon: Smartphone, t: "Mobile First ERP", d: "Every critical function on any device, anywhere." },
   ];
   return (
-    <section className="py-24 lg:py-32 bg-surface">
+    <section id="features" aria-labelledby="features-heading" className="py-24 lg:py-32 bg-surface">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="max-w-3xl">
           <SectionLabel>WHAT'S INSIDE</SectionLabel>
-          <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
-            Everything a school needs, in one system.
+          <h2 id="features-heading" className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
+            Everything a modern school needs, in one system.
           </h2>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-            Nine connected modules. Built to work together — because your school operates as one institution.
+            Nine connected modules built to work together — because your school operates as one integrated institution.
           </p>
         </Reveal>
 
@@ -364,7 +363,7 @@ export function Benefits() {
     { icon: Lock, t: "Data you can trust", d: "Role-based access, encrypted, compliant." },
   ];
   return (
-    <section className="py-24 lg:py-32 bg-[oklch(0.14_0.04_255)] text-white relative overflow-hidden">
+    <section id="benefits" aria-labelledby="benefits-heading" className="py-24 lg:py-32 bg-[oklch(0.14_0.04_255)] text-white relative overflow-hidden">
       <div className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full bg-primary/40 blur-3xl" aria-hidden />
       <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-teal/25 blur-3xl" aria-hidden />
 
@@ -374,11 +373,11 @@ export function Benefits() {
             <Sparkles className="h-3.5 w-3.5" />
             WHY IT MATTERS
           </div>
-          <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-            The real impact is what your team <span className="text-teal">gets back.</span>
+          <h2 id="benefits-heading" className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+            The real impact of a <span className="text-teal">Modern School ERP.</span>
           </h2>
           <p className="mt-5 text-lg text-white/70 leading-relaxed">
-            Features describe what we do. Benefits describe what you gain.
+            Features describe what our school software does. Benefits describe what your institution gains in efficiency and growth.
           </p>
         </Reveal>
 
@@ -408,15 +407,15 @@ export function WhyVidrasil() {
     { icon: Telescope, t: "Long-Term", d: "Built for the next decade of Indian education, not a quick market entry." },
   ];
   return (
-    <section id="why" className="py-24 lg:py-32">
+    <section id="why" aria-labelledby="why-heading" className="py-24 lg:py-32">
       <div className="mx-auto max-w-5xl px-5 lg:px-8">
         <Reveal>
           <SectionLabel>OUR PHILOSOPHY</SectionLabel>
-          <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
-            Administration should be <span className="text-brand-gradient">invisible.</span>
+          <h2 id="why-heading" className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
+            School administration should be <span className="text-brand-gradient">invisible.</span>
           </h2>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-            The best administrative technology doesn't announce itself. It quietly removes friction.
+            The best school management technology doesn't announce itself. It quietly removes friction so educators can focus on teaching.
           </p>
         </Reveal>
 
@@ -441,20 +440,20 @@ export function Roadmap() {
   const phases = [
     { st: "active", n: "01", tag: "Foundation", t: "Vidrasil ERP — School Management", d: "Unified administration for K–12 schools.", note: "Launching 2025" },
     { st: "next", n: "02", tag: "Expand", t: "College & Higher Education ERP", d: "Same philosophy, extended to colleges and polytechnics.", note: "On the roadmap" },
-    { st: "next", n: "03", tag: "Deepen", t: "Admission Management", d: "End-to-end digital admissions — enquiry to enrollment.", note: "On the roadmap" },
+    { st: "next", n: "03", tag: "Deepen", t: "Admission Management System", d: "End-to-end digital admissions — enquiry to enrollment.", note: "On the roadmap" },
     { st: "next", n: "04", tag: "Accelerate", t: "AI Institutional Analytics", d: "Predictive dashboards for risks and opportunities.", note: "On the roadmap" },
-    { st: "next", n: "05", tag: "Connect", t: "Learning Platform", d: "Integrated LMS, homework and structured parent-teacher comms.", note: "On the roadmap" },
+    { st: "next", n: "05", tag: "Connect", t: "LMS & Learning Platform", d: "Integrated LMS, homework and structured parent-teacher comms.", note: "On the roadmap" },
   ];
   return (
-    <section id="vision" className="py-24 lg:py-32 bg-surface">
+    <section id="vision" aria-labelledby="vision-heading" className="py-24 lg:py-32 bg-surface">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="max-w-3xl">
           <SectionLabel>THE ROAD AHEAD</SectionLabel>
-          <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
-            Where we begin. <span className="text-brand-gradient">Not where we stop.</span>
+          <h2 id="vision-heading" className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
+            Where we begin. <span className="text-brand-gradient">Our vision for Indian education.</span>
           </h2>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-            A technology company with a long-term commitment to the education sector.
+            A technology company with a long-term commitment to providing the best school ERP solutions for the education sector.
           </p>
         </Reveal>
 
@@ -491,24 +490,24 @@ export function Roadmap() {
 /* --------------------------- EARLY ACCESS --------------------------- */
 export function EarlyAccess() {
   return (
-    <section className="py-24 lg:py-32">
+    <section id="early-access" aria-labelledby="early-access-heading" className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="max-w-3xl">
           <SectionLabel>WHERE WE ARE TODAY</SectionLabel>
-          <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
-            In development.
-            <span className="block mt-2 text-brand-gradient">Inviting the right institutions to shape it.</span>
+          <h2 id="early-access-heading" className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
+            Actively Developing the Future of
+            <span className="block mt-2 text-brand-gradient">Indian School Management.</span>
           </h2>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-            We aren't rushing to market. We're building something meant to last.
+            We aren't rushing to market. We're building a School ERP meant to last for decades.
           </p>
         </Reveal>
 
         <div className="mt-12 grid md:grid-cols-3 gap-5">
           {[
-            { icon: Hammer, tag: "In Development", t: "Core Platform", d: "Foundational modules under active build. On track for pilot launch." },
+            { icon: Hammer, tag: "In Development", t: "Core ERP Platform", d: "Foundational modules under active build. On track for pilot launch." },
             { icon: FlaskConical, tag: "Pilot Open", t: "Become a Pilot Institution", d: "Full platform free during pilot. Direct line to the founding team." },
-            { icon: Mail, tag: "Waitlist", t: "Secure Early Access", d: "Priority access at launch — pilot-proven product." },
+            { icon: Mail, tag: "Waitlist", t: "Secure Early Access", d: "Priority access at launch — pilot-proven product for your school." },
           ].map(({ icon: I, tag, t, d }, i) => (
             <Reveal key={tag} delay={i * 100}>
               <div className="h-full rounded-2xl bg-card border border-border p-7 hover:border-primary/30 transition-colors">
@@ -541,12 +540,12 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-24 lg:py-32 bg-surface">
+    <section id="faq" aria-labelledby="faq-heading" className="py-24 lg:py-32 bg-surface">
       <div className="mx-auto max-w-4xl px-5 lg:px-8">
         <Reveal className="text-center">
           <SectionLabel>COMMON QUESTIONS</SectionLabel>
-          <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl text-foreground leading-[1.1]">
-            Questions you're already thinking about.
+          <h2 id="faq-heading" className="mt-4 font-display font-bold text-4xl sm:text-5xl text-foreground leading-[1.1]">
+            School Management Software: <span className="text-brand-gradient">FAQs</span>
           </h2>
         </Reveal>
 
@@ -611,20 +610,20 @@ export function FinalCTA() {
   };
 
   return (
-    <section id="cta" className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="cta" aria-labelledby="cta-heading" className="py-24 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-brand-gradient opacity-[0.06] -z-10" aria-hidden />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-brand-gradient opacity-20 blur-3xl rounded-full -z-10" aria-hidden />
 
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <Reveal className="text-center max-w-3xl mx-auto">
-          <SectionLabel>GET STARTED</SectionLabel>
-          <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
-            Your school's future runs on what you <span className="text-brand-gradient">choose today.</span>
-          </h2>
-          <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-            Apply for early access, or tell us about your school and we'll reach out.
-          </p>
-        </Reveal>
+          <Reveal className="text-center max-w-3xl mx-auto">
+            <SectionLabel>GET STARTED</SectionLabel>
+            <h2 id="cta-heading" className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
+              The future of your school starts with the <span className="text-brand-gradient">right infrastructure.</span>
+            </h2>
+            <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+              Apply for our exclusive pilot program or join the waitlist to secure the most advanced School ERP system for your institution.
+            </p>
+          </Reveal>
 
         <div className="mt-14 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           <Reveal>
@@ -633,7 +632,7 @@ export function FinalCTA() {
               <div className="relative">
                 <IconTile icon={Building2} tone="primary" size="lg" />
                 <h3 className="mt-5 font-display font-bold text-2xl text-foreground">Apply for the Pilot</h3>
-                <p className="mt-2 text-sm text-muted-foreground">For schools ready to shape the product with us.</p>
+                <p className="mt-2 text-sm text-muted-foreground">For schools ready to shape the future of education with us.</p>
                 <ul className="mt-5 space-y-2.5">
                   {[
                     "Full platform free during pilot",
@@ -667,7 +666,7 @@ export function FinalCTA() {
               <div className="relative">
                 <IconTile icon={Mail} tone="teal" size="lg" />
                 <h3 className="mt-5 font-display font-bold text-2xl text-foreground">Join the Waitlist</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Stay informed and get priority access at launch.</p>
+                <p className="mt-2 text-sm text-muted-foreground">Stay informed and get priority access to our School ERP at launch.</p>
                 <ul className="mt-5 space-y-2.5">
                   {[
                     "First to know when we go live",
@@ -690,6 +689,7 @@ export function FinalCTA() {
                     <input
                       type="email"
                       name="email"
+                      aria-label="Your school email address"
                       required
                       maxLength={255}
                       disabled={waitlistStatus === "loading"}

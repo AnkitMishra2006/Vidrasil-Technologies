@@ -11,7 +11,7 @@ export function Logo({ className = "", size = "default" }: { className?: string;
   return (
     <img
       src={logoAsset}
-      alt="Vidrasil Technologies"
+      alt="Vidrasil Technologies - Modern School Management ERP Software"
       style={dimensions}
       className={`block w-auto h-auto object-contain object-left ${className}`}
     />
@@ -19,5 +19,5 @@ export function Logo({ className = "", size = "default" }: { className?: string;
 }
 
 export function LogoIcon({ className = "h-10 w-10" }: { className?: string }) {
-  return <img src={iconAsset} alt="Vidrasil" className={`${className} object-contain`} />;
+  return <img src={iconAsset} alt="Vidrasil Logo Icon" className={`${className} object-contain`} />;
 }

@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import favicon from "../assets/favicon-32.png";
+import appleTouchIcon from "../assets/apple-touch-icon.png";
 
 function NotFoundComponent() {
   return (
@@ -89,8 +91,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" },
-      { rel: "icon", type: "image/png", href: "/__l5e/assets-v1/68d73428-a397-4fca-8fe8-5d29d1215fb6/vidrasil-icon-tr.png" },
-      { rel: "apple-touch-icon", href: "/__l5e/assets-v1/68d73428-a397-4fca-8fe8-5d29d1215fb6/vidrasil-icon-tr.png" },
+      { rel: "icon", type: "image/png", href: favicon },
+      { rel: "apple-touch-icon", href: appleTouchIcon },
     ],
   }),
   shellComponent: RootShell,
@@ -100,10 +102,113 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const schemaOrg = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vidrasil.com/#organization",
+        "name": "Vidrasil Technologies",
+        "url": "https://vidrasil.com",
+        "logo": "https://vidrasil.com/__l5e/assets-v1/68d73428-a397-4fca-8fe8-5d29d1215fb6/vidrasil-icon-tr.png",
+        "description": "Vidrasil Technologies builds modern school management software (ERP) for Indian K–12 institutions.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "info@vidrasil.com",
+          "contactType": "customer support"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://vidrasil.com/#software",
+        "name": "Vidrasil ERP",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web, Mobile",
+        "description": "A unified school management platform handling admissions, attendance, fees, communication, and examinations.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "description": "Pilot program open with free access during development."
+        },
+        "publisher": {
+          "@id": "https://vidrasil.com/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://vidrasil.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is the product available right now?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vidrasil ERP is in active development. We're selecting pilot institutions for early access — apply for the Pilot Program or join the waitlist."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is this different from existing school software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most existing tools were built a decade ago. Vidrasil is being built from scratch in 2024 with modern engineering, mobile-first design and deep focus on how Indian K–12 actually operates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much will it cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pilot institutions get the platform free during pilot, with preferential pricing locked in at launch. Full pricing will be announced before public launch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What size of schools is this built for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Indian K–12 schools (CBSE, ICSE, State Board) — from around 200 students to multi-campus institutions with several thousand students."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How secure is our school's data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Role-based access, encrypted storage, automated backups and full per-institution data isolation on enterprise-grade cloud infrastructure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does setup take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "One to three weeks for pilots, including data migration, user setup and staff training — handled by our team."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a mobile app?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — the web app is mobile-first and fully responsive. A native Android/iOS app is on the roadmap."
+            }
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+        />
       </head>
       <body>
         {children}

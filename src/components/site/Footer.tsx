@@ -26,20 +26,20 @@ export function Footer() {
 
             {/* Connect Section - Integrated into left side */}
             <div className="mt-10">
-              <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-5">Connect</h4>
+              <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-5">Connect With Us</h4>
               <div className="flex flex-col gap-3.5 text-sm">
-                <a href="mailto:info@vidrasil.com" className="inline-flex items-center gap-3 text-white/65 hover:text-white transition-colors">
+                <a href="mailto:info@vidrasil.com" className="inline-flex items-center gap-3 text-white/65 hover:text-white transition-colors" title="Email Vidrasil Support">
                   <Mail className="h-4 w-4 text-teal/80" /> info@vidrasil.com
                 </a>
-                <a href="#" className="inline-flex items-center gap-3 text-white/65 hover:text-white transition-colors">
+                <a href="https://vidrasil.com" className="inline-flex items-center gap-3 text-white/65 hover:text-white transition-colors" title="Visit Vidrasil Website">
                   <Globe className="h-4 w-4 text-teal/80" /> vidrasil.com
                 </a>
               </div>
               <div className="mt-6 flex items-center gap-3">
-                <a href="#" aria-label="LinkedIn" className="h-10 w-10 grid place-items-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
+                <a href="https://linkedin.com/company/vidrasil" target="_blank" rel="noopener noreferrer" aria-label="Vidrasil on LinkedIn" className="h-10 w-10 grid place-items-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
                   <Linkedin className="h-4 w-4" />
                 </a>
-                <a href="#" aria-label="Twitter" className="h-10 w-10 grid place-items-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
+                <a href="https://twitter.com/vidrasil" target="_blank" rel="noopener noreferrer" aria-label="Vidrasil on Twitter" className="h-10 w-10 grid place-items-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
                   <Twitter className="h-4 w-4" />
                 </a>
               </div>
@@ -49,30 +49,30 @@ export function Footer() {
           {/* Right Side: Link columns */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-12 items-center">
             <FooterCol
-              title="Product"
+              title="School Software"
               items={[
-                ["Features", "#solution"],
+                ["ERP Features", "#solution"],
                 ["Why Vidrasil", "#why"],
-                ["Roadmap", "#vision"],
-                ["Pricing", "#cta"],
+                ["Product Roadmap", "#vision"],
+                ["Pricing Inquiry", "#cta"],
               ]}
             />
             <FooterCol
-              title="Company"
+              title="Our Company"
               items={[
-                ["About", "#about"],
+                ["About Us", "#about"],
                 ["Our Vision", "#vision"],
                 ["Careers", "#"],
-                ["Contact", "#cta"],
+                ["Contact Us", "#cta"],
               ]}
             />
             <FooterCol
-              title="Get Started"
+              title="Get Started Today"
               items={[
                 ["Apply for Pilot", "#cta"],
                 ["Join Waitlist", "#cta"],
-                ["Request Demo", "#cta"],
-                ["Partner With Us", "#cta"],
+                ["Request a Demo", "#cta"],
+                ["Partner Program", "#cta"],
               ]}
             />
           </div>
@@ -82,12 +82,13 @@ export function Footer() {
         <div className="mt-20 rounded-3xl border border-white/10 bg-white/[0.02] p-6 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8 overflow-hidden relative group">
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-80 h-80 bg-primary/15 blur-3xl rounded-full transition-transform group-hover:scale-110" />
           <div className="relative">
-            <h3 className="font-display font-semibold text-2xl text-white">Building something for your school?</h3>
-            <p className="text-base text-white/50 mt-1.5">Join the early access program — free during pilot.</p>
+            <h3 className="font-display font-semibold text-2xl text-white">Ready for a better School ERP?</h3>
+            <p className="text-base text-white/50 mt-1.5">Join the early access program for Indian institutions.</p>
           </div>
           <a
             href="#cta"
             className="relative inline-flex items-center justify-center gap-2 bg-white text-[oklch(0.14_0.04_255)] font-bold text-base px-8 py-4 rounded-2xl hover:bg-white/90 transition shadow-xl"
+            aria-label="Request early access to Vidrasil School ERP"
           >
             Apply for Early Access <ArrowUpRight className="h-5 w-5" />
           </a>
