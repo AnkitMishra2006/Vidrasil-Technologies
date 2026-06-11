@@ -1,5 +1,6 @@
 import { Mail, Globe, Linkedin, Twitter, ArrowUpRight } from "lucide-react";
 import { Logo } from "./Logo";
+import { siteConfig } from "@/lib/seo.config";
 
 export function Footer() {
   return (
@@ -28,18 +29,18 @@ export function Footer() {
             <div className="mt-10">
               <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-5">Connect With Us</h4>
               <div className="flex flex-col gap-3.5 text-sm">
-                <a href="mailto:info@vidrasil.com" className="inline-flex items-center gap-3 text-white/65 hover:text-white transition-colors" title="Email Vidrasil Support">
-                  <Mail className="h-4 w-4 text-teal/80" /> info@vidrasil.com
+                <a href={`mailto:${siteConfig.business.email}`} className="inline-flex items-center gap-3 text-white/65 hover:text-white transition-colors" title={`Email ${siteConfig.shortName} Support`}>
+                  <Mail className="h-4 w-4 text-teal/80" /> {siteConfig.business.email}
                 </a>
-                <a href="https://vidrasil.com" className="inline-flex items-center gap-3 text-white/65 hover:text-white transition-colors" title="Visit Vidrasil Website">
-                  <Globe className="h-4 w-4 text-teal/80" /> vidrasil.com
+                <a href={siteConfig.url} className="inline-flex items-center gap-3 text-white/65 hover:text-white transition-colors" title={`Visit ${siteConfig.shortName} Website`}>
+                  <Globe className="h-4 w-4 text-teal/80" /> {siteConfig.url.replace("https://", "")}
                 </a>
               </div>
               <div className="mt-6 flex items-center gap-3">
-                <a href="https://linkedin.com/company/vidrasil" target="_blank" rel="noopener noreferrer" aria-label="Vidrasil on LinkedIn" className="h-10 w-10 grid place-items-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
+                <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${siteConfig.shortName} on LinkedIn`} className="h-10 w-10 grid place-items-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
                   <Linkedin className="h-4 w-4" />
                 </a>
-                <a href="https://twitter.com/vidrasil" target="_blank" rel="noopener noreferrer" aria-label="Vidrasil on Twitter" className="h-10 w-10 grid place-items-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
+                <a href={`https://twitter.com/${siteConfig.social.twitter.replace("@", "")}`} target="_blank" rel="noopener noreferrer" aria-label={`${siteConfig.shortName} on Twitter`} className="h-10 w-10 grid place-items-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all">
                   <Twitter className="h-4 w-4" />
                 </a>
               </div>
@@ -88,7 +89,7 @@ export function Footer() {
           <a
             href="#cta"
             className="relative inline-flex items-center justify-center gap-2 bg-white text-[oklch(0.14_0.04_255)] font-bold text-base px-8 py-4 rounded-2xl hover:bg-white/90 transition shadow-xl"
-            aria-label="Request early access to Vidrasil School ERP"
+            aria-label={`Request early access to ${siteConfig.name}`}
           >
             Apply for Early Access <ArrowUpRight className="h-5 w-5" />
           </a>
@@ -96,7 +97,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-white/40 tracking-wide">
-          <p>© 2024–2025 Vidrasil Technologies Pvt. Ltd. All rights reserved.</p>
+          <p>© 2024–{new Date().getFullYear()} {siteConfig.business.legalName} All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
             <a href="#" className="hover:text-white transition-colors">Terms</a>

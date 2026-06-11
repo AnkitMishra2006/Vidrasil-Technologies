@@ -32,8 +32,8 @@ export function DashboardMockup() {
             <SideItem icon={BarChart3} label="Reports" />
           </aside>
 
-          {/* Main */}
-          <main className="bg-background p-5">
+          {/* Inner Content Area */}
+          <div className="bg-background p-5">
             {/* Top bar */}
             <div className="flex items-center justify-between mb-5">
               <div>
@@ -96,7 +96,7 @@ export function DashboardMockup() {
                 </div>
               ))}
             </div>
-          </main>
+          </div>
         </div>
       </div>
 

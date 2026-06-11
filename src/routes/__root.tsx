@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import favicon from "../assets/favicon-32.png";
 import appleTouchIcon from "../assets/apple-touch-icon.png";
+import { siteConfig } from "@/lib/seo.config";
 
 function NotFoundComponent() {
   return (
@@ -79,12 +80,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vidrasil Technologies — Empowering Education. Enabling Futures." },
-      { name: "description", content: "Modern school management ERP for Indian K–12 institutions." },
-      { name: "author", content: "Vidrasil Technologies" },
+      { title: siteConfig.title },
+      { name: "description", content: siteConfig.description },
+      { name: "author", content: siteConfig.author.name },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Vidrasil Technologies" },
+      { property: "og:site_name", content: siteConfig.name },
+      { property: "og:image", content: siteConfig.ogImage },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: siteConfig.social.twitter },
+      { name: "twitter:creator", content: siteConfig.social.twitter },
+      { name: "twitter:title", content: siteConfig.title },
+      { name: "twitter:description", content: siteConfig.description },
+      { name: "twitter:image", content: siteConfig.ogImage },
+      { name: "keywords", content: siteConfig.keywords.join(", ") },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -93,6 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" },
       { rel: "icon", type: "image/png", href: favicon },
       { rel: "apple-touch-icon", href: appleTouchIcon },
+      { rel: "canonical", href: siteConfig.url },
     ],
   }),
   shellComponent: RootShell,
@@ -107,20 +116,39 @@ function RootShell({ children }: { children: ReactNode }) {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://vidrasil.com/#organization",
-        "name": "Vidrasil Technologies",
-        "url": "https://vidrasil.com",
-        "logo": "https://vidrasil.com/__l5e/assets-v1/68d73428-a397-4fca-8fe8-5d29d1215fb6/vidrasil-icon-tr.png",
+        "@id": `${siteConfig.url}/#organization`,
+        "name": siteConfig.name,
+        "url": siteConfig.url,
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vidrasil.com/Vidrasil%20Technologies%20Favicon.png",
+          "width": "512",
+          "height": "512"
+        },
         "description": "Vidrasil Technologies builds modern school management software (ERP) for Indian K–12 institutions.",
         "contactPoint": {
           "@type": "ContactPoint",
-          "email": "info@vidrasil.com",
+          "email": siteConfig.business.email,
           "contactType": "customer support"
+        },
+        "sameAs": [
+          siteConfig.social.linkedin,
+          `https://twitter.com/${siteConfig.social.twitter.replace("@", "")}`
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteConfig.url}/#website`,
+        "url": siteConfig.url,
+        "name": siteConfig.name,
+        "description": siteConfig.description,
+        "publisher": {
+          "@id": `${siteConfig.url}/#organization`
         }
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://vidrasil.com/#software",
+        "@id": `${siteConfig.url}/#software`,
         "name": "Vidrasil ERP",
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "Web, Mobile",
@@ -133,12 +161,12 @@ function RootShell({ children }: { children: ReactNode }) {
           "description": "Pilot program open with free access during development."
         },
         "publisher": {
-          "@id": "https://vidrasil.com/#organization"
+          "@id": `${siteConfig.url}/#organization`
         }
       },
       {
         "@type": "FAQPage",
-        "@id": "https://vidrasil.com/#faq",
+        "@id": `${siteConfig.url}/#faq`,
         "mainEntity": [
           {
             "@type": "Question",

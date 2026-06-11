@@ -5,27 +5,24 @@ import {
   Hero, BrandIntro, Problem, Solution, Features,
   Benefits, WhyVidrasil, Roadmap, EarlyAccess, Faq, FinalCTA,
 } from "@/components/site/Sections";
+import { siteConfig } from "@/lib/seo.config";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vidrasil ERP | Top School Management Software & System in India" },
-      {
-        name: "description",
-        content:
-          "Discover Vidrasil ERP, the leading school management software for Indian K-12 institutions. Streamline student data, fee management, attendance, and parent communication in one modern school ERP system. Request early access.",
-      },
-      { property: "og:title", content: "Vidrasil ERP — Modern School Management System" },
-      {
-        property: "og:description",
-        content:
-          "Transform your school's administration with a unified ERP platform. A complete student information system and school management software for administrators, teachers, and parents.",
-      },
+      { title: siteConfig.title },
+      { name: "description", content: siteConfig.description },
+      { property: "og:title", content: siteConfig.title },
+      { property: "og:description", content: siteConfig.description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vidrasil.com/" },
-      { name: "keywords", content: "School Management Software, School ERP, Student Information System, K-12 School Software, Fee Management System, School Admin Software India" }
+      { property: "og:url", content: siteConfig.url },
+      { property: "og:image", content: siteConfig.ogImage },
+      { name: "twitter:title", content: siteConfig.title },
+      { name: "twitter:description", content: siteConfig.description },
+      { name: "twitter:image", content: siteConfig.ogImage },
+      { name: "keywords", content: siteConfig.keywords.join(", ") }
     ],
-    links: [{ rel: "canonical", href: "https://vidrasil.com/" }],
+    links: [{ rel: "canonical", href: siteConfig.url }],
   }),
   component: Index,
 });
